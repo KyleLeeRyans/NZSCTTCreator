@@ -1,4 +1,7 @@
 //By Kyle Lin, Copyright (C) July, 2015, all rights reserved. Apologies for messiness of code, this is a mere roughdraft.
+//Version 1.5
+//Basic user-input sanitization added
+//Deductive-reasoning added
 var moves = ['Kick', 'Ninja Sword', 'Nunchucks', 'Shadow Fireball', 'Shadow Slip', 'Run in Circles', 'Lightning Fast Karate Chop', 'Rampage', 'Strength/Muscle', 'Zap', 'Regenerate', 'Gravedigger', 'Zombie Corps', 'Apocalypse', 'Samurai Sword', 'Helmet', 'Smash', 'Lightning', 'Earthquake', 'Twist', 'Bend', 'Juggling Knives', 'Acid Spray', 'Nose', 'Backwards Mustachio', 'Nose of the Taunted', 'Mustache Mash', 'Big Hairy Deal'];
 var truthtables = {
     'reference': (function(){var newMoves = [];for(var moveChecked in moves){newMoves.push(moves[moveChecked]);}return newMoves;})(),
@@ -67,35 +70,6 @@ var requireInfo = function(moveArgument, smart){
         persistentlyAsk(moveArgument, moveInfo, moveComparedTo, smart);
     }
     return moveInfo;
-};
-var commands = {
-    'definedCommands': ['quit', 'displaytt'],
-    'implementation': [
-        function(argumentArray){
-            //arguments not called
-            stop = true;
-        },
-        function(argumentArray){
-            //arguments not called
-            alert(JSON.stringify(truthtables));
-        }
-    ],
-    'execute': function(keyword){
-        //keyword must be pre-sanitized or else program may crash
-        keyword = keyword.split('/');
-        var statement = keyword[1];
-        keyword.splice(0, 2);
-        //keyword.slice() removes the first two items of the array which are '' and the statement
-        //keyword is now an array of arguments that will be passed into an implemented function as an array
-        if(this.definedCommands.indexOf(statement) > -1){
-            if(keyword.length > 0){
-                this.implementation[this.definedCommands.indexOf(statement)](keyword);
-            }
-            else{
-                this.implementation[this.definedCommands.indexOf(statement)]();
-            }
-        }
-    }
 };
 var create = function(smart){
     if(stop === false){
