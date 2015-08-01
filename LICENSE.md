@@ -1,1 +1,2 @@
-All default rights are reserved by the creator of this repository, along with all rights that can be legally specified.
+No license, all rights reserved.
+You may not hold the creator liable for any losses sustained through any direct or indirect use of this program.
