@@ -107,8 +107,10 @@ var persistentlyAsk = function(moveArgument, target, moveComparedTo, smart){
                 }
             }
             if(isCommand === true){
+                if(confirm('Are you sure you want to execute Command: ' + comparison + ' ?')){
                     commands.execute(comparison);
                     persistentlyAsk(moveArgument, target, moveComparedTo, smart);
+                }
             }
             else{
                 var confirmation = confirm('Are you sure that ' + moveArgument + ' ' + numberToResult(comparison) + ' against ' + moves[moveComparedTo] + '?');
