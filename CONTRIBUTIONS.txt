@@ -1,0 +1,3 @@
+The Ninja Zombie Samurai Clown Truth Table creator was designed by Kyle Lin and Kyle Ryans.
+It is meant for creating the NZSCTT which will be then used to create NZSC, a game created by Kyle Lin and Hansel Desouza.
+Concept ideas designed by Kyle Ryans and Hans Andersen of the company Kabra Hackers.
