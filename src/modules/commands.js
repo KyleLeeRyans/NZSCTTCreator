@@ -1,3 +1,4 @@
+//Copyright August 2015, all rights reserved.
 var commands = {
     'definedCommands': ['quit', 'displaytt', 'prematuresend'],
     'implementation': [
