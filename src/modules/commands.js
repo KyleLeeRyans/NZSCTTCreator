@@ -1,13 +1,32 @@
 var commands = {
-    'definedCommands': ['quit', 'displaytt'],
+    'definedCommands': ['quit', 'displaytt', 'prematuresend'],
     'implementation': [
         function(argumentArray){
+            //quit implementation
             //arguments not called
-            stop = true;
+            var areYouSure = confirm('Are you sure you want to quit?');
+            if(areYouSure === true){
+                alert('Alert: Here are your current NZSC Truthtables... \n ' + JSON.stringify(truthtables));
+                stop = true;
+            }
+            else{
+                alert('Alert: Quit procedure terminated!');
+            }
         },
         function(argumentArray){
+            //displaytt implementation
             //arguments not called
             alert(JSON.stringify(truthtables));
+        },
+        function(argumentArray){
+            //prematuresend implementation
+            //arguments[0, 1] are called
+            //syntax: /prematuresend/<location id>/<stringify>
+            var output = truthtables;
+            if(argumentArray[1] === true || argumentArray[1] == 'true'){
+                output = JSON.stringify(truthtables);
+            }
+            document.getElementById(argumentArray[0]).innerHTML = output;
         }
     ],
     'sendErrorMessage':function(){
