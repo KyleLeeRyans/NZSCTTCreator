@@ -1,4 +1,6 @@
 //By Kyle Lin, Copyright (C) July, 2015, all rights reserved. Apologies for messiness of code, this is a mere roughdraft.
+//Version 1.0. Nothing should be actually executed, initiation is commented out.
+//No special editions implemented, this is the most primitive version available here.
 var moves = ['Kick', 'Ninja Sword', 'Nunchucks', 'Shadow Fireball', 'Shadow Slip', 'Run in Circles', 'Lightning Fast Karate Chop', 'Rampage', 'Strength/Muscle', 'Zap', 'Regenerate', 'Gravedigger', 'Zombie Corps', 'Apocalypse', 'Samurai Sword', 'Helmet', 'Smash', 'Lightning', 'Earthquake', 'Twist', 'Bend', 'Juggling Knives', 'Acid Spray', 'Nose', 'Backwards Mustachio', 'Nose of the Taunted', 'Mustache Mash', 'Big Hairy Deal'];
 var truthtables = {
     'reference': (function(){var newMoves = [];for(var moveChecked in moves){newMoves.push(moves[moveChecked]);}return newMoves;})(),
